@@ -23,8 +23,7 @@ export class MapaComponent implements OnInit {
   selectedLat: number;
   selectedLng: number;
   weatherData: any;
-  greenLayer: any; // Capa verde para el territorio
-  zoomThreshold = 10; // Nivel de zoom para cambiar la capa
+  previousMarker: any; // Variable para almacenar el marcador anterior
 
   constructor(private backendService: BackendService, private weatherService: WeatherService) {}
 
@@ -33,120 +32,45 @@ export class MapaComponent implements OnInit {
       this.currentLat = position.coords.latitude;
       this.currentLng = position.coords.longitude;
       this.loadMap();
+      this.getWeatherData(this.currentLat, this.currentLng);
     }).catch((error) => {
       console.log('Error getting location', error);
     });
   }
 
+  // Cargar el mapa con la ubicación actual
   loadMap() {
-    // Inicializar el mapa
     this.map = L.map('map').setView([this.currentLat, this.currentLng], 13);
 
-    // Añadir capa de mapa base
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: 'Map data © OpenStreetMap contributors'
     }).addTo(this.map);
 
-    // Añadir marcador en la ubicación actual
     L.marker([this.currentLat, this.currentLng]).addTo(this.map)
       .bindPopup('You are here')
       .openPopup();
 
-    // Cargar la capa GeoJSON de las áreas terrestres
-    this.loadLandGeoJSON();
+    // Escuchar clics en el mapa para seleccionar una ubicación
+    this.map.on('click', (e: { latlng: { lat: any; lng: any; }; }) => {
+      const lat = e.latlng.lat;
+      const lng = e.latlng.lng;
 
-    // Escuchar el evento 'zoomend' para aplicar o remover la capa verde
-    this.map.on('zoomend', () => {
-      this.handleZoomChange();
+      this.selectedLat = lat;
+      this.selectedLng = lng;
+
+      // Eliminar el marcador anterior si existe
+      if (this.previousMarker) {
+        this.map.removeLayer(this.previousMarker);
+      }
+
+      // Agregar el nuevo marcador
+      this.previousMarker = L.marker([lat, lng]).addTo(this.map)
+        .bindPopup(`Selected location: ${lat}, ${lng}`)
+        .openPopup();
+
+      // Obtener el clima para la ubicación seleccionada
+      this.getWeatherData(lat, lng);
     });
-
-    // Inicialmente controlar el zoom para ver si se debe agregar la capa verde
-    this.handleZoomChange();
-  }
-
-  // Cargar el GeoJSON de áreas terrestres
-  loadLandGeoJSON() {
-    // Este es un ejemplo simplificado. Reemplaza 'landGeoJsonData' con tus datos GeoJSON reales.
-    const landGeoJsonData: GeoJSON.FeatureCollection = {
-      type: "FeatureCollection",
-      features: [
-        {
-          type: "Feature",
-          geometry: {
-            type: "Polygon",
-            coordinates: [
-              [
-                [-130, 50],  // Coordenadas de un polígono representando tierra
-                [-120, 50],
-                [-120, 40],
-                [-130, 40],
-                [-130, 50]
-              ]
-            ]
-          },
-          properties: { name: "North America" }
-        },
-        {
-          type: "Feature",
-          geometry: {
-            type: "Polygon",
-            coordinates: [
-              [
-                [0, 60],    // Coordenadas de otro polígono
-                [10, 60],
-                [10, 50],
-                [0, 50],
-                [0, 60]
-              ]
-            ]
-          },
-          properties: { name: "Northern Europe" }
-        },
-        {
-          type: "Feature",
-          geometry: {
-            type: "Polygon",
-            coordinates: [
-              [
-                [-10, 30],
-                [10, 30],
-                [10, 20],
-                [-10, 20],
-                [-10, 30]  // Un polígono en el mar Mediterráneo
-              ]
-            ]
-          },
-          properties: { name: "Mediterranean Area" }
-        }
-      ]
-    };
-    
-
-    this.greenLayer = L.geoJSON(landGeoJsonData, {
-      style: {
-        color: 'green',
-        fillColor: 'green',
-        fillOpacity: 0.5,
-      }
-    });
-  }
-
-  // Controlar el cambio de zoom
-  handleZoomChange() {
-    const zoomLevel = this.map.getZoom();
-    console.log('Current Zoom Level:', zoomLevel);
-
-    if (zoomLevel <= this.zoomThreshold) {
-      // Añadir la capa verde si el zoom es bajo
-      if (!this.map.hasLayer(this.greenLayer)) {
-        this.greenLayer.addTo(this.map);
-      }
-    } else {
-      // Remover la capa verde si el zoom es alto
-      if (this.map.hasLayer(this.greenLayer)) {
-        this.map.removeLayer(this.greenLayer);
-      }
-    }
   }
 
   // Obtener la ubicación actual usando la API de Geolocation
@@ -194,4 +118,3 @@ export class MapaComponent implements OnInit {
     }
   }
 }
-
