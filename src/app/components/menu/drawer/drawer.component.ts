@@ -1,4 +1,10 @@
-import { ChangeDetectionStrategy, Component, ElementRef, Input, ViewChild } from "@angular/core";
+import {
+  ChangeDetectionStrategy,
+  Component,
+  ElementRef,
+  Input,
+  ViewChild,
+} from "@angular/core";
 
 @Component({
   selector: "app-drawer",
@@ -7,7 +13,6 @@ import { ChangeDetectionStrategy, Component, ElementRef, Input, ViewChild } from
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DrawerComponent {
-  @ViewChild('calendarInput') calendarInput!: ElementRef;
   cropsMock = ["corn", "potato", "pumpkin", "carrot"];
 
   selectedCrop: string = "";
@@ -15,6 +20,7 @@ export class DrawerComponent {
   cropDate: string = "";
   formError: boolean = false;
   tomorrow: string;
+  isCropPlanningActive: boolean = true;
 
   constructor() {
     const tomorrowDate = new Date();
@@ -22,8 +28,15 @@ export class DrawerComponent {
     this.tomorrow = tomorrowDate.toISOString().split("T")[0]; // Format as YYYY-MM-DD
   }
 
-  openCalendar() {
-    this.calendarInput.nativeElement.click(); // This triggers the input calendar to open
+  setActiveTab(tab: string) {
+    switch (tab) {
+      case "cropPlanning":
+        this.isCropPlanningActive = true;
+        break;
+      case "harvestHistory":
+        this.isCropPlanningActive = false;
+        break;
+    }
   }
 
   decreaseSize() {
