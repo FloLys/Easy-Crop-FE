@@ -1,0 +1,364 @@
+@import 'https://fonts.googleapis.com/css?family=Ubuntu:300,400,600,700';
+
+#drawer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 30px;
+  box-sizing: border-box;
+  width: 100%; // Make it responsive
+  max-width: 576px; // Limit max width
+  height: auto; // Allow height to adjust based on content
+  overflow: hidden; // Prevent any scrolling
+}
+
+.tabs {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 30px;
+  box-sizing: border-box;
+  width: -webkit-fill-available;
+}
+
+.opened-tab {
+  padding: 6px 16px 6px 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 12px;
+  box-sizing: border-box;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #3eb021;
+  height: 42px;
+  width: -webkit-fill-available;
+  box-shadow: 0px 1px 3px 0px #0000004c inset;
+}
+
+.opened-tab-text-label {
+  color: #ffffff;
+  font-size: 16px;
+  font-family: Ubuntu;
+  letter-spacing: 0px;
+  text-decoration: none;
+  font-weight: 500;
+  text-align: left;
+  text-wrap: nowrap;
+}
+
+.closed-tab {
+  padding: 6px 16px 6px 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 6px;
+  box-sizing: border-box;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #ffffff;
+  height: 42px;
+  width: -webkit-fill-available;
+  box-shadow:
+    0px 2px 4px 0px #00000026,
+    0px 1px 2px 0px #0000004c;
+}
+
+.tab-text-label {
+  color: #171950;
+  font-size: 16px;
+  font-family: Ubuntu;
+  letter-spacing: 0px;
+  text-decoration: none;
+  font-weight: 500;
+  text-align: left;
+  text-wrap: nowrap;
+}
+
+.line-7_66-75 {
+  display: flex;
+}
+
+.have-you-planted-here-before_66-33 {
+  padding: 0px 16px 0px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  gap: 16px;
+  box-sizing: border-box;
+  width: -webkit-fill-available;
+}
+
+.message_65-103 {
+  padding: 16px 24px 16px 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  gap: 0px;
+  box-sizing: border-box;
+  border-radius: 29px;
+  background: #ffffff;
+  height: 240px;
+  width: -webkit-fill-available;
+}
+.text-describe-what-climate-activity-you-observed-on-your-crops-at-the-time-and-how-your-harvest-went-_65-105 {
+  color: #000000;
+  font-size: 18px;
+  font-family: Ubuntu;
+  letter-spacing: 0px;
+  text-decoration: none;
+  font-weight: 300;
+  text-align: left;
+  text-wrap: wrap;
+  width: -webkit-fill-available;
+}
+
+.form-field {
+  padding: 0px 16px 0px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  gap: 16px;
+  box-sizing: border-box;
+  width: -webkit-fill-available;
+}
+
+.form-title {
+  color: #ffffff;
+  font-size: 22px;
+  font-family: Ubuntu;
+  line-height: 115.00915288925171%;
+  letter-spacing: 0px;
+  text-decoration: none;
+  font-weight: 500;
+  text-align: left;
+  text-wrap: wrap;
+  width: -webkit-fill-available;
+}
+
+.field {
+  padding: 0px 16px 0px 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 24px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  border-color: #e8e8e8;
+  border-style: solid;
+  border-width: 1px;
+  background: #ffffff;
+  height: 40px;
+  width: -webkit-fill-available;
+  box-shadow: 0px 1px 2px 0px #2222224c;
+}
+.vector_83-321 {
+  display: flex;
+}
+
+.arrow-_83-317 {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+
+.frame-159_83-210 {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 10px;
+  box-sizing: border-box;
+}
+.iconex-light-minus_83-211 {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+
+.frame-158_83-212 {
+  padding: 8px 16px 8px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 10px;
+  box-sizing: border-box;
+  overflow: hidden;
+  border-radius: 5px;
+  border-color: #15174b;
+  border-style: solid;
+  border-width: 1px;
+  background: #ffffff;
+}
+.text-150_83-213 {
+  color: #222222;
+  font-size: 16px;
+  font-family: Ubuntu;
+  letter-spacing: 0%;
+  text-decoration: none;
+  font-weight: 400;
+  text-align: left;
+  height: 11px;
+  width: -webkit-fill-available;
+}
+
+.iconex-light-plus_83-214 {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+
+.text-input_82-176 {
+  color: #222222;
+  font-size: 16px;
+  font-family: Ubuntu;
+  letter-spacing: 0%;
+  text-decoration: none;
+  font-weight: 400;
+  text-align: left;
+  text-wrap: wrap;
+  width: -webkit-fill-available;
+}
+
+.field_66-15 {
+  padding: 0px 16px 0px 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 24px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  border-color: #e8e8e8;
+  border-style: solid;
+  border-width: 1px;
+  background: #ffffff;
+  height: 40px;
+  width: -webkit-fill-available;
+  box-shadow: 0px 1px 2px 0px #2222224c;
+}
+.edit-calendar_66-16 {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+
+.text-input_66-17 {
+  color: #222222;
+  font-size: 16px;
+  font-family: Ubuntu;
+  letter-spacing: 0%;
+  text-decoration: none;
+  font-weight: 400;
+  text-align: left;
+  text-wrap: wrap;
+  width: -webkit-fill-available;
+}
+
+.field-missing-error {
+  padding: 0px 16px 0px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  gap: 16px;
+  box-sizing: border-box;
+  width: -webkit-fill-available;
+}
+.subtitle-error {
+  color: #e1402f;
+  font-size: 16px;
+  font-family: Ubuntu;
+  line-height: 115.00915288925171%;
+  letter-spacing: 0px;
+  text-decoration: none;
+  font-weight: 400;
+  text-align: left;
+  text-wrap: wrap;
+  width: -webkit-fill-available;
+}
+
+.submit_66-52 {
+  padding: 10px 24px 10px 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 10px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  background: #3eb021;
+  width: 166px;
+  height: 48px;
+  box-shadow:
+    0px 2px 4px 0px #00000026,
+    0px 1px 2px 0px #0000004c;
+}
+
+.button-text {
+  color: #ffffff;
+  font-size: 20px;
+  font-family: Ubuntu;
+  letter-spacing: 0px;
+  text-decoration: none;
+  font-weight: 500;
+  text-align: center;
+  text-wrap: nowrap;
+  text-shadow:
+    0px 2px 6px #00000026,
+    0px 1px 2px #0000004c;
+}
+
+.copyrights_82-165 {
+  padding: 0px 16px 0px 16px;
+  top: 1041px;
+  left: 25px;
+  position: absolute;
+  display: flex;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 8px;
+  box-sizing: border-box;
+  width: 526px;
+}
+.vector_82-166 {
+  display: flex;
+}
+
+.text-openstreetmap-contributors-_82-167 {
+  color: #808080;
+  font-size: 16px;
+  font-family: Ubuntu;
+  line-height: 115.00915288925171%;
+  letter-spacing: 0px;
+  text-decoration: none;
+  font-weight: 400;
+  text-align: left;
+  text-wrap: nowrap;
+}
