@@ -5,7 +5,6 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  flex-wrap: nowrap;
   align-items: center;
   gap: 30px;
   box-sizing: border-box;
@@ -19,7 +18,6 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  flex-wrap: nowrap;
   align-items: center;
   gap: 30px;
   box-sizing: border-box;
@@ -27,15 +25,14 @@
 }
 
 .opened-tab {
-  padding: 6px 16px 6px 16px;
+  color: white;
+  font-size: 16px;
+  font-family: Ubuntu;
+  font-weight: 500;
+  padding: 6px 16px;
   display: flex;
-  flex-direction: row;
   justify-content: center;
-  flex-wrap: nowrap;
   align-items: center;
-  gap: 12px;
-  box-sizing: border-box;
-  overflow: hidden;
   border-radius: 8px;
   background: #3eb021;
   height: 42px;
@@ -43,84 +40,31 @@
   box-shadow: 0px 1px 3px 0px #0000004c inset;
 }
 
-.opened-tab-text-label {
-  color: #ffffff;
+.closed-tab {
+  color: black;
   font-size: 16px;
   font-family: Ubuntu;
-  letter-spacing: 0px;
-  text-decoration: none;
   font-weight: 500;
-  text-align: left;
-  text-wrap: nowrap;
-}
-
-.closed-tab {
-  padding: 6px 16px 6px 16px;
+  padding: 6px 16px;
   display: flex;
-  flex-direction: row;
   justify-content: center;
-  flex-wrap: nowrap;
   align-items: center;
-  gap: 6px;
-  box-sizing: border-box;
-  overflow: hidden;
   border-radius: 8px;
   background: #ffffff;
   height: 42px;
   width: -webkit-fill-available;
-  box-shadow:
-    0px 2px 4px 0px #00000026,
-    0px 1px 2px 0px #0000004c;
-}
-
-.tab-text-label {
-  color: #171950;
-  font-size: 16px;
-  font-family: Ubuntu;
-  letter-spacing: 0px;
-  text-decoration: none;
-  font-weight: 500;
-  text-align: left;
-  text-wrap: nowrap;
+  box-shadow: 0px 2px 4px 0px #00000026, 0px 1px 2px 0px #0000004c;
 }
 
 .line-7_66-75 {
   display: flex;
 }
 
-.message_65-103 {
-  padding: 16px 24px 16px 24px;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  flex-wrap: nowrap;
-  align-items: flex-start;
-  gap: 0px;
-  box-sizing: border-box;
-  border-radius: 29px;
-  background: #ffffff;
-  height: 240px;
-  width: -webkit-fill-available;
-}
-.text-describe-what-climate-activity-you-observed-on-your-crops-at-the-time-and-how-your-harvest-went-_65-105 {
-  color: #000000;
-  font-size: 18px;
-  font-family: Ubuntu;
-  letter-spacing: 0px;
-  text-decoration: none;
-  font-weight: 300;
-  text-align: left;
-  text-wrap: wrap;
-  width: -webkit-fill-available;
-}
-
 .form-field {
-  padding: 0px 16px 0px 16px;
+  padding: 0 16px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  flex-wrap: nowrap;
-  align-items: flex-start;
   gap: 16px;
   box-sizing: border-box;
   width: -webkit-fill-available;
@@ -130,21 +74,15 @@
   color: #ffffff;
   font-size: 22px;
   font-family: Ubuntu;
-  line-height: 115.00915288925171%;
-  letter-spacing: 0px;
-  text-decoration: none;
   font-weight: 500;
-  text-align: left;
-  text-wrap: wrap;
   width: -webkit-fill-available;
 }
 
 .field {
-  padding: 0 16px; // Adjust padding
+  padding: 0 16px;
   display: flex;
-  flex-direction: row;
   align-items: center;
-  gap: 8px; // Space between the input and the icon
+  gap: 8px;
   border-radius: 10px;
   border: 1px solid #e8e8e8;
   background: #ffffff;
@@ -164,179 +102,54 @@
   appearance: none; // Remove default styling in modern browsers
 }
 
-// Ensure to set the date input back to native appearance
-input[type="date"] {
-  -webkit-appearance: inline-field; /* Use the inline style to show the calendar icon */
-  -moz-appearance: textfield; /* Keep default styles for Firefox */
-  appearance: inline-field; /* Use the inline style for modern browsers */
-  padding: 0; // Remove default padding
-  margin: 0; // Remove default margin
-}
-
 .icon {
   width: 24px;
   height: 24px;
-
   &.button-icon {
     cursor: pointer;
   }
 }
 
-input[type="date"] {
-  -webkit-appearance: none; /* Remove default styles for Safari */
-  -moz-appearance: textfield; /* Remove default styles for Firefox */
-  appearance: none; /* Remove default styles for modern browsers */
-}
-
-.vector_83-321 {
-  display: flex;
-}
-
-.arrow-_83-317 {
-  position: relative;
-  width: 24px;
-  height: 24px;
-}
-
-.frame-159_83-210 {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  flex-wrap: nowrap;
-  align-items: center;
-  gap: 10px;
-  box-sizing: border-box;
-}
-
-.frame-158_83-212 {
-  padding: 8px 16px 8px 16px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  flex-wrap: nowrap;
-  align-items: center;
-  gap: 10px;
-  box-sizing: border-box;
-  overflow: hidden;
-  border-radius: 5px;
-  border-color: #15174b;
-  border-style: solid;
-  border-width: 1px;
-  background: #ffffff;
-}
-.text-150_83-213 {
-  color: #222222;
-  font-size: 16px;
-  font-family: Ubuntu;
-  letter-spacing: 0%;
-  text-decoration: none;
-  font-weight: 400;
-  text-align: left;
-  height: 11px;
-  width: -webkit-fill-available;
-}
-
-.text-input_82-176 {
-  color: #222222;
-  font-size: 16px;
-  font-family: Ubuntu;
-  letter-spacing: 0%;
-  text-decoration: none;
-  font-weight: 400;
-  text-align: left;
-  text-wrap: wrap;
-  width: -webkit-fill-available;
-}
-
-.field_66-15 {
-  padding: 0px 16px 0px 16px;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  flex-wrap: nowrap;
-  align-items: center;
-  gap: 24px;
-  box-sizing: border-box;
-  border-radius: 10px;
-  border-color: #e8e8e8;
-  border-style: solid;
-  border-width: 1px;
-  background: #ffffff;
-  height: 40px;
-  width: -webkit-fill-available;
-  box-shadow: 0px 1px 2px 0px #2222224c;
-}
-
-.text-input_66-17 {
-  color: #222222;
-  font-size: 16px;
-  font-family: Ubuntu;
-  letter-spacing: 0%;
-  text-decoration: none;
-  font-weight: 400;
-  text-align: left;
-  text-wrap: wrap;
-  width: -webkit-fill-available;
-}
-
 .field-missing-error {
-  padding: 0px 16px 0px 16px;
+  padding: 0 16px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  flex-wrap: nowrap;
-  align-items: flex-start;
   gap: 16px;
   box-sizing: border-box;
   width: -webkit-fill-available;
 }
+
 .subtitle-error {
   color: #e1402f;
   font-size: 16px;
   font-family: Ubuntu;
-  line-height: 115.00915288925171%;
-  letter-spacing: 0px;
-  text-decoration: none;
   font-weight: 400;
-  text-align: left;
-  text-wrap: wrap;
   width: -webkit-fill-available;
 }
 
 .submit {
   cursor: pointer;
-  padding: 10px 24px 10px 24px;
+  padding: 10px 24px;
   display: flex;
-  flex-direction: row;
   justify-content: center;
-  flex-wrap: nowrap;
   align-items: center;
-  gap: 10px;
-  box-sizing: border-box;
   border-radius: 10px;
   background: #3eb021;
   width: 166px;
   height: 48px;
-  box-shadow:
-    0px 2px 4px 0px #00000026,
-    0px 1px 2px 0px #0000004c;
+  box-shadow: 0px 2px 4px 0px #00000026, 0px 1px 2px 0px #0000004c;
 }
 
 .button-text {
   color: #ffffff;
   font-size: 20px;
   font-family: Ubuntu;
-  letter-spacing: 0px;
-  text-decoration: none;
   font-weight: 500;
   text-align: center;
-  text-wrap: nowrap;
-  text-shadow:
-    0px 2px 6px #00000026,
-    0px 1px 2px #0000004c;
 }
 
-.copyrights_82-165 {
+.copyrights {
   padding: 0px 16px 0px 16px;
   top: 1041px;
   left: 25px;
@@ -355,7 +168,7 @@ input[type="date"] {
   display: flex;
 }
 
-.text-openstreetmap-contributors-_82-167 {
+.text-openstreetmap-contributors {
   color: #808080;
   font-size: 16px;
   font-family: Ubuntu;
