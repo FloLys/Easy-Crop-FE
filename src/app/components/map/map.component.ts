@@ -11,11 +11,11 @@ L.Icon.Default.mergeOptions({
 });
 
 @Component({
-  selector: 'app-mapa',
-  templateUrl: './mapa.component.html',
-  styleUrls: ['./mapa.component.scss']
+  selector: 'app-map',
+  templateUrl: './map.component.html',
+  styleUrls: ['./map.component.scss']
 })
-export class MapaComponent implements OnInit {
+export class MapComponent implements OnInit {
   map: any;
   currentLat: number;
   currentLng: number;

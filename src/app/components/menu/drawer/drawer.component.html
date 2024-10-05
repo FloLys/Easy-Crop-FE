@@ -1,0 +1,96 @@
+<div id="drawer">
+  <div class="tabs">
+    <div class="opened-tab">
+      <span class="opened-tab-text-label">Crop Planning</span>
+    </div>
+    <div class="closed-tab">
+      <span class="tab-text-label">Harvest History </span>
+    </div>
+  </div>
+  <div class="line-7_66-75">
+    <svg
+      width="494"
+      height="3"
+      viewBox="0 0 494 3"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <line
+        x1="492.5"
+        y1="1.5"
+        x2="1.5"
+        y2="1.5"
+        stroke="#E8E8E8"
+        stroke-width="3"
+        stroke-linecap="round"
+      />
+    </svg>
+  </div>
+  <div class="form-field">
+    <span class="form-title"
+      >Plan you crop ahead of time and see if it's going to be a good
+      harvest.</span
+    >
+  </div>
+  <div class="form-field">
+    <span class="form-title">Select your crop</span>
+    <div class="field">
+      <img src="assets/icon/sprout-outline.svg" alt="Sprout" class="icon" />
+      <select [(ngModel)]="selectedCrop" class="text-input" required>
+        <option value="" disabled selected>Crop</option>
+        <option *ngFor="let crop of cropsMock" [value]="crop">{{ crop }}</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="form-field">
+    <span class="form-title">Select the location and size of your crops</span>
+    <div class="field">
+      <img src="assets/icon/minus-box-outline.svg" alt="Minus" (click)="decreaseSize()" class="icon button-icon"/>
+      <input type="number" [(ngModel)]="cropSize" class="text-input" min="0" />
+      <img src="assets/icon/plus-box-outline.svg" alt="Plus" (click)="increaseSize()" class="icon button-icon"/>
+      <span class="text-input_82-176">kms</span>
+    </div>
+  </div>
+
+  <div class="form-field">
+    <span class="form-title">When do you want to sow?</span>
+    <div class="field">
+        <img src="assets/icon/calendar-blank-outline.svg" alt="Calendar Icon" class="icon" />
+        <input 
+            type="date" 
+            [(ngModel)]="cropDate" 
+            #calendarInput 
+            [min]="tomorrow" 
+            class="date-input" />
+    </div>
+</div>
+
+  <div class="field-missing-error" *ngIf="formError">
+    <span class="subtitle-error">Please fill in all fields correctly.</span>
+  </div>
+
+  <div class="submit" (click)="submitForm()">
+    <span class="button-text">Submit</span>
+  </div>
+
+  <div class="copyrights_82-165">
+    <div class="vector_82-166">
+      <svg
+        width="17"
+        height="16"
+        viewBox="0 0 17 16"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M6.48061 7.10621C6.52071 6.84153 6.60893 6.60893 6.72122 6.41644C6.96184 5.96729 7.37089 5.73469 7.92431 5.72667C8.28523 5.72667 8.61407 5.88708 8.84667 6.11968C9.07124 6.36832 9.22363 6.7132 9.22363 7.05809H10.6673C10.6513 6.68112 10.5791 6.33624 10.4267 6.01541C10.3064 5.71063 10.1219 5.43793 9.88132 5.21336C8.71834 4.1386 6.56081 4.291 5.57428 5.51012C4.53963 6.84955 4.51557 9.19155 5.56626 10.531C6.53675 11.726 8.6622 11.8945 9.81715 10.8277C10.0658 10.6272 10.2663 10.3786 10.4267 10.0899C10.555 9.80111 10.6433 9.49633 10.6513 9.16749H9.22363C9.22363 9.33592 9.16749 9.48831 9.09531 9.62466C9.02312 9.77705 8.92687 9.89736 8.82261 10.0016C8.55793 10.2102 8.24513 10.3224 7.90826 10.3224C7.61952 10.3144 7.37891 10.2583 7.19444 10.138C6.99392 10.0257 6.81747 9.84122 6.72122 9.62466C6.32019 8.90281 6.38436 7.90024 6.48061 7.10621ZM8.02055 0C3.60925 0 0 3.60925 0 8.02055C0.425089 18.6638 15.6401 18.6558 16.0411 8.02055C16.0411 3.60925 12.4319 0 8.02055 0ZM8.02055 14.437C4.48349 14.437 1.60411 11.5576 1.60411 8.02055C1.95701 -0.489253 14.0841 -0.489253 14.437 8.02055C14.437 11.5576 11.5576 14.437 8.02055 14.437Z"
+          fill="#808080"
+        />
+      </svg>
+    </div>
+    <span class="text-openstreetmap-contributors-_82-167"
+      >OpenStreetMap contributors.</span
+    >
+  </div>
+</div>
