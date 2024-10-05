@@ -26,88 +26,54 @@
       />
     </svg>
   </div>
-  <div class="have-you-planted-here-before_66-33">
-    <span
-      class="form-title"
-      >Plan you crop ahead of time and see if it's going to be a good harvest.</span
+  <div class="form-field">
+    <span class="form-title"
+      >Plan you crop ahead of time and see if it's going to be a good
+      harvest.</span
     >
-    <!-- <div class="message_65-103">
-      <span
-        class="text-describe-what-climate-activity-you-observed-on-your-crops-at-the-time-and-how-your-harvest-went-_65-105"
-        >Describe what climate activity you observed on your crops at the time
-        and how your harvest went.</span
-      >
-    </div> -->
   </div>
   <div class="form-field">
     <span class="form-title">Select your crop</span>
     <div class="field">
-      <div class="vector_83-321">
-        <svg
-          width="20"
-          height="20"
-          viewBox="0 0 20 20"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M0 19.0304V17.0304C0 17.0304 5 15.0304 10 15.0304C15 15.0304 20 17.0304 20 17.0304V19.0304H0ZM9.3 6.13045C8.1 2.23045 2 3.13045 2 3.13045C2 3.13045 2.2 10.9304 7.9 9.73045C7.5 6.83045 6 6.03045 6 6.03045C8.8 6.03045 9 9.43045 9 9.43045V14.0304C9.3 14.0304 9.7 14.0304 10 14.0304C10.3 14.0304 10.7 14.0304 11 14.0304V9.83045C11 9.83045 11 5.93045 14 4.93045C14 4.93045 12 7.93045 12 9.93045C19 10.6304 19 1.03045 19 1.03045C19 1.03045 10.1 0.0304489 9.3 6.13045Z"
-            fill="#15174B"
-          />
-        </svg>
-      </div>
-      <span class="form-title">Corn</span>
-      <app-icons-arrow-drop-down-24-px
-        class="arrow-_83-317"
-      ></app-icons-arrow-drop-down-24-px>
+      <img src="assets/icon/sprout-outline.svg" alt="Sprout" class="icon" />
+      <select [(ngModel)]="selectedCrop" class="text-input" required>
+        <option value="" disabled selected>Crop</option>
+        <option *ngFor="let crop of cropsMock" [value]="crop">{{ crop }}</option>
+      </select>
     </div>
   </div>
-  <!-- <div>
-    <ion-list class="select-your-crop_83-300">
-      <ion-item>
-        <ion-select aria-label="Select your crop" value="Crop">
-          <ion-select-option *ngFor="let crop of cropsMock">{{ crop }}</ion-select-option>
-        </ion-select>
-      </ion-item>
-    </ion-list>
-  </div> -->
+
   <div class="form-field">
-    <span class="form-title"
-      >Select the location and size of your crops</span
-    >
+    <span class="form-title">Select the location and size of your crops</span>
     <div class="field">
-      <div class="frame-159_83-210">
-        <app-iconex-light-minus
-          class="iconex-light-minus_83-211"
-        ></app-iconex-light-minus>
-        <div class="frame-158_83-212">
-          <span class="text-150_83-213">150</span>
-        </div>
-        <app-iconex-light-plus
-          class="iconex-light-plus_83-214"
-        ></app-iconex-light-plus>
-      </div>
+      <img src="assets/icon/minus-box-outline.svg" alt="Minus" (click)="decreaseSize()" class="icon button-icon"/>
+      <input type="number" [(ngModel)]="cropSize" class="text-input" min="0" />
+      <img src="assets/icon/plus-box-outline.svg" alt="Plus" (click)="increaseSize()" class="icon button-icon"/>
       <span class="text-input_82-176">kms</span>
     </div>
   </div>
+
   <div class="form-field">
-    <span class="form-title">When was this?</span>
+    <span class="form-title">When do you want to sow?</span>
     <div class="field">
-      <app-edit-calendar
-        [style]="'Outlined'"
-        class="edit-calendar_66-16"
-      ></app-edit-calendar>
-      <span class="text-input_66-17">January 08 - May 15 </span>
+        <img src="assets/icon/calendar-blank-outline.svg" alt="Calendar Icon" class="icon" />
+        <input 
+            type="date" 
+            [(ngModel)]="cropDate" 
+            #calendarInput 
+            [min]="tomorrow" 
+            class="date-input" />
     </div>
+</div>
+
+  <div class="field-missing-error" *ngIf="formError">
+    <span class="subtitle-error">Please fill in all fields correctly.</span>
   </div>
-  <div class="field-missing-error">
-    <span class="subtitle-error"
-      >Please select a location and size of your crops.</span
-    >
-  </div>
-  <div class="submit_66-52">
+
+  <div class="submit" (click)="submitForm()">
     <span class="button-text">Submit</span>
   </div>
+
   <div class="copyrights_82-165">
     <div class="vector_82-166">
       <svg

@@ -9,24 +9,18 @@ import { AppRoutingModule } from "./app-routing.module";
 import { HttpClientModule } from "@angular/common/http";
 import { MapComponent } from "./components/map/map.component";
 import { DrawerComponent } from "./components/menu/drawer/drawer.component";
-import { EditCalendarComponent } from "./components/menu/edit-calendar/edit-calendar.component";
-import { IconexLightPlusComponent } from "./components/menu/iconex-light-plus/iconex-light-plus.component";
-import { IconexLightMinusComponent } from "./components/menu/iconex-light-minus/iconex-light-minus.component";
-import { IconsArrowDropDown24PxComponent } from "./components/menu/icons-arrow-drop-down-24-px/icons-arrow-drop-down-24-px.component";
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
     AppComponent,
     MapComponent,
     DrawerComponent,
-    EditCalendarComponent,
-    IconexLightPlusComponent,
-    IconexLightMinusComponent,
-    IconsArrowDropDown24PxComponent,
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
+    FormsModule,
     AppRoutingModule,
     HttpClientModule,
   ],
