@@ -1,0 +1,132 @@
+<!-- map.component.html -->
+<div id="map" style="height: 100vh; width: 100vw;"></div>
+<div class="drawer">
+<div id="drawer">
+  <!-- PAGES -->
+  <div class="tabs">
+    <div
+      [ngClass]="{
+        'opened-tab': isCropPlanningActive,
+        'closed-tab': !isCropPlanningActive
+      }"
+      (click)="setActiveTab('cropPlanning')"
+    >
+      <span>Crop Planning</span>
+    </div>
+    <div
+      [ngClass]="{
+        'opened-tab': !isCropPlanningActive,
+        'closed-tab': isCropPlanningActive
+      }"
+      (click)="setActiveTab('harvestHistory')"
+    >
+      <span>Harvest History</span>
+    </div>
+  </div>
+
+  <div class="line-7_66-75">
+    <svg
+      width="494"
+      height="3"
+      viewBox="0 0 494 3"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <line
+        x1="492.5"
+        y1="1.5"
+        x2="1.5"
+        y2="1.5"
+        stroke="#E8E8E8"
+        stroke-width="3"
+        stroke-linecap="round"
+      />
+    </svg>
+  </div>
+
+  <!-- CROP PLANNING TAB -->
+  <div *ngIf="isCropPlanningActive && !isSuccessVisible">
+    <div >
+    <div class="form-field">
+      <span class="form-title">Plan your crop ahead of time and see if it's going to be a good harvest.</span>
+    </div>
+
+    
+    <!-- CROP -->
+<div class="form-field">
+    <span class="form-title">Select your crop</span>
+    <div class="field">
+      <img src="assets/icon/sprout-outline.svg" alt="Sprout" class="icon" />
+      <select [(ngModel)]="selectedCrop" class="text-input" required>
+        <option *ngFor="let crop of crops" [value]="crop.plant_name">{{ crop.plant_name }}</option>
+      
+      </select>
+    </div>
+  </div>
+    
+
+    <!-- LOCATION -->
+    <div class="form-field">
+      <span class="form-title">Select the location and size of your crops</span>
+      <div class="field">
+        <img src="assets/icon/minus-box-outline.svg" alt="Minus" (click)="adjustSize(-1)" class="icon button-icon"/>
+        <input type="number" [(ngModel)]="cropSize" min="0"/>
+        <img src="assets/icon/plus-box-outline.svg" alt="Plus" (click)="adjustSize(1)" class="icon button-icon"/>
+        <span class="text-input_82-176">kms</span>
+      </div>
+    </div>
+
+  <!-- TIME -->
+<div class="form-field">
+    <span class="form-title">When do you want to sow?</span>
+    <div class="field">
+      <img
+        src="assets/icon/calendar-blank-outline.svg"
+        alt="Calendar Icon"
+        class="icon"
+      />
+      <input
+        type="date"
+        [(ngModel)]="sow_date"
+        #calendarInput
+        [min]="tomorrow"
+        class="date-input"
+      />
+    </div>
+  </div>
+
+    <!-- ERROR MESSAGE -->
+    <div class="field-missing-error" *ngIf="formError">
+      <span class="subtitle-error">Please fill in all fields correctly.</span>
+    </div>
+
+    <!-- SUBMIT BUTTON -->
+    <div class="submit" (click)="onSubmit()">
+      <span class="button-text">Submit</span>
+    </div>
+  </div>
+</div>
+
+<!-- SUCCESS VIEW -->
+<div *ngIf="isSuccessVisible">
+    <h2>Your Settings</h2>
+    <p><strong>Selected Crop:</strong> {{ selectedCrop }}</p>
+    <p><strong>Sowing Date:</strong> {{ sow_date }}</p>
+    <p><strong>Harvesting Date:</strong> {{ harvestingDate }}</p>
+    <p><strong>Success Rate:</strong> {{ successRate }}%</p>
+  
+    <!-- Contenedor para la gráfica de pie -->
+    <div style="width: 100%; height: 400px; margin-bottom: 20px;">
+      <p-chart type="pie" [data]="data"></p-chart>
+    </div>
+  
+    <p><strong>Environmental Impacts:</strong></p>
+  
+    <!-- Contenedor para la gráfica de líneas -->
+    <div>
+      <p-chart type="line" [data]="chartData" [options]="chartOptions"></p-chart>
+    </div>
+  
+    <!-- Aquí puedes agregar las gráficas o datos sobre los impactos ambientales -->
+  </div>
+  
