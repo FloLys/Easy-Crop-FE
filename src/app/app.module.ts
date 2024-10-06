@@ -8,14 +8,13 @@ import { AppComponent } from "./app.component";
 import { AppRoutingModule } from "./app-routing.module";
 import { HttpClientModule } from "@angular/common/http";
 import { MapComponent } from "./components/map/map.component";
-import { DrawerComponent } from "./components/menu/drawer/drawer.component";
 import { FormsModule } from "@angular/forms";
+import { ChartModule } from 'primeng/chart';
 
 @NgModule({
   declarations: [
     AppComponent,
     MapComponent,
-    DrawerComponent,
   ],
   imports: [
     BrowserModule,
@@ -23,6 +22,7 @@ import { FormsModule } from "@angular/forms";
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
+    ChartModule
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],

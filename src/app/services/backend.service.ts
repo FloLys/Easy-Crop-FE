@@ -6,11 +6,14 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class BackendService {
+  sendData(dataToSend: { latitude: number; longitude: number; cropSize: number; weatherData: any; }) {
+    throw new Error('Method not implemented.');
+  }
 
   constructor(private http: HttpClient) { }
 
   sendLocation(payload: any): Observable<any> {
-    return this.http.post('http://34.69.23.77/add_location', payload);
+    return this.http.post('http://34.69.23.77/weather_growth_analytic', payload);
   }
 
   
