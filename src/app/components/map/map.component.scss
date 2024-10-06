@@ -1,0 +1,22 @@
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+.drawer {
+  position: fixed; /* Fixed position to overlay on the map */
+  top: 0;
+  right: 0;
+  width: 35vw; /* 35% of the viewport width */
+  height: 100vh; /* Full viewport height */
+  z-index: 1000; /* Ensure it stays on top of the map */
+  padding: 30px 25px;
+  box-sizing: border-box;
+  background: linear-gradient(
+    0deg,
+    #171950f2 0%,
+    #5a68fcf2 86.5%,
+    #68bbfdf2 95%
+  );
+  overflow-y: auto; /* Allow scrolling if content exceeds the height */
+}
