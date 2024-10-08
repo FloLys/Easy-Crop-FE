@@ -1,7 +1,8 @@
 # Easy Crop
 
 ### 2024 NASA Space Apps Challenge
-[https://www.spaceappschallenge.org/nasa-space-apps-2024/find-a-team/easy-crop](https://www.spaceappschallenge.org/nasa-space-apps-2024/find-a-team/easy-crop)
+[Leveraging Earth Observation Data for Informed Agricultural Decision-Making](https://www.spaceappschallenge.org/nasa-space-apps-2024/challenges/leveraging-earth-observation-data-for-informed-agricultural-decision-making/)
+
 ## Project Overview
 
 **Easy Crop** is an AI-powered tool designed to help farmers and agronomists plan their harvests months in advance by utilizing satellite-based data and AI-driven predictions. It leverages modern technology to address critical agricultural challenges like drought and water reservation by providing detailed visual insights into a harvest’s success rate and possible environmental impacts.
@@ -10,37 +11,33 @@
 
 By filling out the planning form, users receive personalized insights into crop management, supported by a collaborative community that enhances the AI model through real-world inputs. **Easy Crop** brings precision agriculture to the forefront, helping users optimize their harvests and contribute to a global agricultural community.
 
----
-
-## Project Details
-
-### High-Level Summary
-
-We recognize the current climate crisis and the pressing issue of declining water resources worldwide. That’s why we created **Easy Crop**, an innovative solution using AI and NASA satellite data to empower farmers with actionable insights months before their harvest.
-
 Key features include:
 - **AI-Powered Harvest Planning:** Based on real-time weather data and historical satellite information.
 - **Community-Driven Inputs:** Farmers can share their experiences to improve AI models, benefiting the entire agricultural community.
 - **Advanced Data Visualizations:** Personalized charts and analytics help maximize crop yield and minimize environmental impacts.
 
-
 ---
 
 ## Demo
-
-**Final Project Code:**  
-GitHub Repository: [https://github.com/FloLys/Easy-Crop-FE](https://github.com/FloLys/Easy-Crop-FE)
 https://youtu.be/nGBcgimZ-OQ
----
 
-## How It Works
+## Figma Presentation
+[https://www.figma.com/proto/LI3BLToJqEtOgNLxj5Mdxx/Easy-Crop-NASA](https://www.figma.com/proto/LI3BLToJqEtOgNLxj5Mdxx/Easy-Crop-NASA?page-id=0%3A1&node-id=213-4747&node-type=canvas&viewport=-1958%2C559%2C0.24&t=lJrSQGozRY5TAIib-1&scaling=contain&content-scaling=fixed&starting-point-node-id=213%3A4747)
 
-### User Flow
+## Final Project Code:
+**Frontend GitHub Repository:** [https://github.com/FloLys/Easy-Crop-FE](https://github.com/FloLys/Easy-Crop-FE)\
+**Backend GitHub Repository:** [https://github.com/asenges/EasyCropBackend](https://github.com/asenges/EasyCropBackend)
+
+
+## User Flow Manual
+
 1. **Crop Planning:** Users input their crop type, location, and planting schedule. Easy Crop then generates predictions on potential yields and environmental factors, such as droughts or water shortages.
 2. **Soil and Climate Analytics:** Through detailed charts and data, farmers can assess how weather and soil conditions will affect their crops.
 3. **Agro Community Integration:** A platform feature that allows users to share their insights, benefiting the AI model and fostering a supportive network of farmers and agronomists.
 
-![imagn/3.png](https://github.com/FloLys/Easy-Crop-FE/blob/main/3.png)
+![imagn/3.png](https://github.com/FloLys/Easy-Crop-FE/blob/main/3.png) 
+
+(this is only a visual reference)
 
 ### Predictive Model Infrastructure
 - **Azure Machine Learning:** Used to power predictive models by receiving real-time weather data and historical information sourced from NASA satellites (MODIS sensors). The system is fully integrated with **Azure Blob Storage** for optimal data management and visualization.
@@ -99,14 +96,25 @@ The **Easy Crop** project relies on data from NASA’s **MODIS sensors**, proces
 
 ## References
 
-- **Ionic**
-- **Angular**
-- **Google Cloud**
-- **Python**
-- **MySQL**
-- **Meteomatics API**
-- **MODIS Planetary Computer**
-- **Azure Machine Learning**
-- **OpenAI API**
-- **Flourish** (for visual data representation)
+- **[Microsoft Azure](https://azure.microsoft.com/)**
+- **[Microsoft Planetary Computer](https://planetarycomputer.microsoft.com/)**
+- **[Azure Machine Learning](https://azure.microsoft.com/en-us/products/machine-learning)**
+- **[Meteomatics](https://www.meteomatics.com/)**
+- **[Ionic](https://ionicframework.com/)**
+- **[Angular](https://angular.dev/)**
+- **[PrimeNg](https://primeng.org/)**
+- **[Google Cloud](https://cloud.google.com/)**
+- **[Python](https://www.python.org/)**
+- **[MySQL](https://www.mysql.com/)**
+- **[OpenAI ChatGPT](https://openai.com/)**
+- **[Figma](https://www.figma.com/)**
+- **[Flourish](https://flourish.studio/)** (for visual data representation)
+- **[Narakeet](https://www.narakeet.com/)** (for demo voice audio)
 
+
+## Authors
+
+Florencia Mestre - https://github.com/flolys/ \
+Leandro Irigoyen - https://github.com/leandroirigoyen \
+Alejandro Senges - https://github.com/asenges/ \
+Bogdan Gavriles - https://github.com/gavriles/ 
