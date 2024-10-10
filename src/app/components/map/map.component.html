@@ -45,7 +45,7 @@
     </div>
 
     <!-- CROP PLANNING TAB -->
-    <div *ngIf="!isCropPlanningActive && !isSuccessVisible">
+    <div *ngIf="isCropPlanningActive && !isSuccessVisible">
       <div class="drawer">
         <div class="form-field">
           <span class="title"
@@ -125,8 +125,8 @@
       </div>
     </div>
 
-    <!-- SUCCESS VIEW *ngIf="isSuccessVisible" -->
-    <div class="form-field">
+    <!-- SUCCESS VIEW -->
+    <div class="form-field" *ngIf="isSuccessVisible">
       <span class="title">Your Settings</span>
       <div class="settings">
         <!-- Selected Crop -->
