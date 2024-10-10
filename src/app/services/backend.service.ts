@@ -13,7 +13,7 @@ export class BackendService {
   constructor(private http: HttpClient) { }
 
   sendLocation(payload: any): Observable<any> {
-    return this.http.post('http://34.69.23.77/weather_growth_analytic', payload);
+    return this.http.post('https://serv.easycrop.pro/weather_growth_analytic', payload);
   }
 
   

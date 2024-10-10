@@ -33,7 +33,7 @@ export class WeatherService {
     const location = `${lat},${lon}`; // Coordenadas
     const format = 'json'; // Formato de respuesta
 
-    const url = `https://api.meteomatics.com/${validDateTime}/${parameters}/${location}/${format}`;
+    const url = `/api/${validDateTime}/${parameters}/${location}/${format}`;
 
     const headers = new HttpHeaders({
       Authorization: `Basic ${btoa(username + ':' + password)}`
